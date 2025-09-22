@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mahalle Takas</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 500px; margin: auto; }
+    input, button { width: 100%; padding: 10px; margin-bottom: 10px; }
+    .item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Mahalle Takas & Kiralama</h1>
+  <input id="itemName" placeholder="Eşya adı">
+  <button onclick="addItem()">Ekle</button>
+  <div id="itemList"></div>
+
+  <script>
+    const itemList = document.getElementById('itemList');
+    function addItem() {
+      const name = document.getElementById('itemName').value;
+      if(name) {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerText = name;
+        itemList.appendChild(div);
+        document.getElementById('itemName').value = '';
+      }
+    }
+  </script>
+</body>
+</html>
